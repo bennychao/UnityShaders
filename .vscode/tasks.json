@@ -1,0 +1,386 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+
+        {
+            "label": "Matrix.Actress.Build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Actress/ZP.Matrix.Actress.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Matrix.Architect.Build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Architect/ZP.Matrix.Architect.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Actress/ZP.Matrix.Actress.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Matrix.Inspector.Publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Inspector/ZP.Matrix.Inspector.csproj",
+                "-c",
+                "Release",
+                "-o",
+                "../../Publish/ZP.Matrix.Inspector"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Matrix.Stockman.Publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Stockman/ZP.Matrix.Stockman.csproj",
+                "-c",
+                "Release",
+                "-o",
+                "../../Publish/ZP.Matrix.Stockman"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Actress/ZP.Matrix.Actress.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Actress/ZP.Matrix.Actress.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+        ,
+        {
+            "label": "Unity.Source.Plugin.Publish",
+            "type": "shell",
+            "command": "${workspaceFolder}/ZP.Lib/Tools/publish_plugin.sh",
+            "windows": {
+                "command": "${workspaceFolder}/ZP.Lib/Tools/publish_plugin.bat"
+            },
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceRoot}/ZP.Lib"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "args": ["${input:UnityProjectName}"]
+        },
+        {
+            "label": "ZProRx.Lib.Package.Publish",
+            "type": "shell",
+            "command": "${workspaceFolder}/ZP.Lib/Tools/publish_package.sh",
+            "windows": {
+                "command": "${workspaceFolder}/ZP.Lib/Tools/publish_package.bat"
+            },
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceRoot}/ZP.Lib"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Unity.ZP.Lib.Plugin.Publish",
+            "type": "shell",
+            "command": "${workspaceFolder}/ZP.Lib/Tools/publish_zplib.sh",
+            "windows": {
+                "command": "${workspaceFolder}/ZP.Lib/Tools/publish_zplib.bat"
+            },
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceRoot}/ZP.Lib"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "args": ["${input:ZPLibUnityProjectName}"]
+        },
+        {
+            "label": "Matrix.Server.Publish",
+            "type": "shell",
+            "command": "${workspaceFolder}/ZP.Matrix/Tools/publish.sh",
+            "windows": {
+                "command": "${workspaceFolder}/ZP.Matrix/Tools/publish.bat"
+            },
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceRoot}/ZP.Matrix"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+        ,
+        {
+            "label": "Matrix.Server.Run",
+            "type": "shell",
+            "command": "${workspaceFolder}/ZP.Matrix/Tools/run.sh",
+            "windows": {
+                "command": "${workspaceFolder}/ZP.Matrix/Tools/run.bat"
+            },
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceRoot}/ZP.Matrix"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Matrix.Architect.Run.Debug",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Architect/bin/Debug/netcoreapp3.1/ZP.Matrix.Architect.dll"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Architect/bin/Debug/netcoreapp3.1/"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Matrix.Inspector.Run.Debug",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Inspector/bin/Debug/netcoreapp3.1/ZP.Matrix.Inspector.dll"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/ZP.Matrix/ZP.Matrix.Inspector/bin/Debug/netcoreapp3.1/"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Demo.WebServer.Run.Debug",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "${workspaceFolder}/ZP.WebServer.Demo/bin/Debug/netcoreapp3.1/ZP.WebServer.Demo.dll"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/ZP.WebServer.Demo/bin/Debug/netcoreapp3.1/"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Demo.SocRoomServer.Run.Debug",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "${workspaceFolder}/ZP.Server.Demo/bin/Debug/netcoreapp3.1/ZP.Server.Demo.dll",
+                "'{\"\"WorkerParam\"\":\"\"run\"\",\"\"Port\"\":5050,\"\"UnitType\"\":\"\"hall\"\",\"\"Count\"\":2}'"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/ZP.Server.Demo/bin/Debug/netcoreapp3.1/"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Matrix.XXXXX.Run.Debug",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.${input:matrixcomponent}/bin/Debug/netcoreapp3.1/ZP.Matrix.${input:matrixcomponent}.dll"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/ZP.Matrix/ZP.Matrix.${input:matrixcomponent}/bin/Debug/netcoreapp3.1/"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Matrix.XXXXX2.Run.Debug",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "${workspaceFolder}/ZP.Matrix/ZP.Matrix.${input:matrixcomponent}/bin/Debug/netcoreapp3.1/ZP.Matrix.${input:matrixcomponent}.dll"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/ZP.Matrix/ZP.Matrix.${input:matrixcomponent}/bin/Debug/netcoreapp3.1/"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Matrix.Client.Lib.Publish",
+            "type": "shell",
+            "command": "${workspaceFolder}/ZP.Lib/Tools/publishclient.sh",
+            "windows": {
+                "command": "${workspaceFolder}/ZP.Lib/Tools/publishclient.bat"
+            },
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceRoot}/ZP.Lib"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Matrix.Server.Kill",
+            "type": "shell",
+            "command": "${workspaceFolder}/ZP.Matrix/Tools/KillTools.sh",
+            "windows": {
+                "command": "${workspaceFolder}/ZP.Matrix/Tools/KillTools.bat"
+            },
+            "args": [
+                "dotnet"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceRoot}/ZP.Matrix"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Matrix.Clear.NacosConfig",
+            "type": "shell",
+            "command": "${workspaceFolder}/ZP.Matrix/Tools/ClearNacosConfig.sh",
+            "windows": {
+                "command": "${workspaceFolder}/ZP.Matrix/Tools/ClearNacosConfig.bat"
+            },
+            "args": [
+                "dotnet"
+            ],
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceRoot}/ZP.Matrix"
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ],
+    "inputs": [
+        {
+          "type": "pickString",
+          "id": "componentType",
+          "description": "What type of component do you want to create?",
+          "options": [
+            "component",
+            "directive",
+            "pipe",
+            "service",
+            "class",
+            "guard",
+            "interface",
+            "enum",
+            "enum"
+          ],
+          "default": "component"
+        },
+        {
+            "type": "pickString",
+            "id": "matrixcomponent",
+            "description": "What type of component do you want to debug run?",
+            "options": [
+              "Actress",
+              "Architect",
+              "Inspector",
+              "Merchant",
+              "Steward",
+              "Stockman",
+              "Supervisor",
+              "Store",
+              "enum"
+            ],
+            "default": "Architect"
+          },
+        {
+          "type": "promptString",
+          "id": "UnityProjectName",
+          "description": "Select your Unity Client.",
+          "default": "Dudu.Unity"
+        },
+        {
+            "type": "promptString",
+            "id": "ZPLibUnityProjectName",
+            "description": "Select your Unity Client.",
+            "default": "ZProRx.Test.Unity"
+          }
+      ]
+}

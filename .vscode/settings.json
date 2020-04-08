@@ -1,0 +1,153 @@
+{
+
+    "search.exclude": {                
+        "*.Unity/Assets/Plugins/ZP.Lib/": true, 
+    },
+
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "log.error",
+                "settings": {
+                    "foreground": "#af1f1f",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "log.warning",
+                "settings": {
+                    "foreground": "#f4ad42",
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+
+    "todo-tree.general.tags":[
+        "TODO",
+        "[TODO]",
+        "**[TODO]**",
+        "FIXME"
+    ],
+
+    "todohighlight.isEnable": true,
+    "todohighlight.isCaseSensitive": true,
+    "todohighlight.keywords": [
+        "DEBUG:",
+        "REVIEW:",
+        {
+            "text": "NOTE:",
+            "color": "#ff0000",
+            "backgroundColor": "yellow",
+            "overviewRulerColor": "grey"
+        },
+        {
+            "text": "HACK:",
+            "color": "#000",
+            "isWholeLine": false,
+        },
+        {
+            "text": "TODO",
+            "color": "yellow",
+            "border": "1px solid green",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0.2,0,0,.2)",
+            //other styling properties goes here ... 
+        },
+        {
+            "text": "[TODO]",
+            "color": "yellow",
+            "border": "1px solid green",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0.2,0,0,.2)",
+            //other styling properties goes here ... 
+        }
+        ,
+        {
+            "text": "[TBD]",
+            "color": "yellow",
+            "border": "1px solid green",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0.2,0,0,.2)",
+            //other styling properties goes here ... 
+        }
+        ,
+        {
+            "text": "TBD",
+            "color": "yellow",
+            "border": "1px solid green",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0.2,0,0,.2)",
+            //other styling properties goes here ... 
+        }
+        ,
+        {
+            "text": "[Bug]",
+            "color": "red",
+            "border": "1px solid red",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0.2,0,0,.2)",
+            //other styling properties goes here ... 
+        }
+        ,
+        {
+            "text": "[Fixed]",
+            "color": "write",
+            "border": "2px solid write",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "green",
+            //other styling properties goes here ... 
+        }
+        ,
+        {
+            "text": "[Done]",
+            "color": "write",
+            "border": "2px solid write",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "green",
+            //other styling properties goes here ... 
+        }
+        ,
+        {
+            "text": "[Deferred]",
+            "color": "write",
+            "border": "2px solid write",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "rgba(0.6,0,0,.2)",
+            //other styling properties goes here ... 
+        }
+        ,
+        {
+            "text": "[Closed]",
+            "color": "blue",
+            "border": "2px solid write",
+            "borderRadius": "2px", //NOTE: using borderRadius along with `border` or you will see nothing change
+            "backgroundColor": "green",
+            //other styling properties goes here ... 
+        }
+    ],
+
+    "shellLauncher.shells.osx": [
+        {
+          "shell": "bash",
+          "args": ["-c", "ls -l | grep ^d >>files.out"],
+          
+          "label": "bash login shell"
+        },
+
+        {
+            "shell": "bash",
+            "args": ["./ZP.Matrix/publish.sh", ">>files.out"],
+            
+            "label": "bash login 2"
+          }
+    ],
+    "favorites.sortDirection": "DESC",
+
+    "pasteImage.path": "${currentFileDir}/Docs/img",
+    "pasteImage.basePath": "${currentFileDir}",
+    "pasteImage.forceUnixStyleSeparator": true,
+    "pasteImage.namePrefix": "${currentFileNameWithoutExt}_",
+    "pasteImage.prefix": "./"
+
+}
